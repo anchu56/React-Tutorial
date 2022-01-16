@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './App.css'
+import Header from './components/Header'
 function App() {
+  const data = 'description'
+  const x = 'Navaneeth'
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header data = {x} />
+        <h1 style={{backgroundColor:'red'}} >Hello world</h1>
+        <br/>
+        <p style={{color:'violet'}} >This is a sample {data}</p>
+        <TestName/>
+        <TestName/>
+        <TestName/>
     </div>
-  );
+    );
 }
 
 export default App;
+
+
+
+function TestName() {
+ return(
+  <h3 className='textcolor' >My Name is Ansaf</h3>
+ )
+}
