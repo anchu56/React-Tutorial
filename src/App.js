@@ -1,27 +1,17 @@
-import './App.css'
-import Header from './components/Header'
 function App() {
-  const data = 'description'
-  const x = 'Navaneeth'
+  let count = 0;
+  const addCount=()=>{
+  count = count+1
+  console.log(count);
+  }
   return (
-    <div>
-      <Header data = {x} />
-        <h1 style={{backgroundColor:'red'}} >Hello world</h1>
-        <br/>
-        <p style={{color:'violet'}} >This is a sample {data}</p>
-        <TestName/>
-        <TestName/>
-        <TestName/>
+    <div className="App" >
+      <h1>Counter : {count}</h1>
+      <button onClick={addCount}>Add</button>
     </div>
     );
 }
-
 export default App;
 
 
 
-function TestName() {
- return(
-  <h3 className='textcolor' >My Name is Ansaf</h3>
- )
-}
