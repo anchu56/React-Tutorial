@@ -6,7 +6,7 @@ function Counter() {
         return()=>{
             console.log("Unmounting") // return works when the component is being removed
         }
-    }) // This works when loading,removing as well as updating 
+    },[]) // when we give an empty array as second argument then useEffect works only during mouning and unmounting , It doesnt work while updating
     const[count,setCount]=useState(0)
     return (
         <div>
