@@ -1,13 +1,13 @@
 import React,{useState,useEffect} from 'react'
 
 function Counter() {
-    useEffect(()=>{
-        console.log("Mounting") // works when new component is being loaded
-        return()=>{
-            console.log("Unmounting") // return works when the component is being removed
-        }
-    },[]) // when we give an empty array as second argument then useEffect works only during mouning and unmounting , It doesnt work while updating
     const[count,setCount]=useState(0)
+    useEffect(()=>{
+        console.log("Mounting"); // works when new component is being loaded
+        console.log("Updating " +count);
+        
+
+    },[count]) // The variable given in the array is - Whichever obj is updated using useState, for whom useEffect has to be called   
     return (
         <div>
             <button onClick={()=>setCount(count+1)}>Increment</button>
