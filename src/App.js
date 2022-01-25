@@ -1,19 +1,22 @@
 import Counter from "./Counter"
 import {useState} from 'react'
+import About from './Container/About'
+import Profile from './Container/Profile'
 function App() {
-  const [state,setState]=useState(false)
+  const [state,setState]=useState('')
+  let component
+  if(state=='about')
+  {component=<About/>}
+  if(state=='profile')
+  {component=<Profile/>}
 return(
   <div className="App">
-  <h1 onClick={()=>setState(!state)}>Show/Hide</h1>
-  
- { state ? < Counter/> : null} 
+    <button onClick={()=>setState('about')}>About</button>
+    <button onClick={()=>setState('profile')}>Profile</button>
+   {component}
   
   </div>
 );
 }
 
 export default App;
-
-
-
-// { state ? < Counter/> : null} can be written as { state && <Counter/>}
